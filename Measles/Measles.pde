@@ -1,11 +1,11 @@
 //Global Variables
 float xFace, yFace, widthDiameterFace, heightDiameterFace, faceRadius, xCenter, smallerDimension;
-float xLeftEye, yLeftEye, eyeDiameter, xRightEye, yRightEye;
+float xLeftEye, yLeftEye, eyeDiameter, xRightEye, yRightEye, xLeftPupil, yLeftPupil, xRightPupil, yRightPupil, pupilDiameter, yCenter;
 float xNoseBridge, yNoseBridge, xLeftNostril, yLeftNostril, xRightNostril, yRightNostril;
 float xLeftMouth, yLeftMouth, xRightMouth, yRightMouth;
-int thack=8;
+int thack=2;
 float xMeasle, yMeasle, MeasleDiameter;
-color resetWhite= #FFFFFF, red=#BC0606; //Similar to int declaration
+color resetWhite= #FFFFFF, red=#BC0606, black=#000000; //Similar to int declaration
 //
 void setup() 
 {
@@ -13,7 +13,7 @@ void setup()
   size(800, 600); //Landscape
   //
   //Population
- xCenter = width/2;
+  xCenter = width/2;
   float yCenter = height/2;
   xFace = xCenter;
   yFace = yCenter;
@@ -30,9 +30,9 @@ void setup()
   yRightEye = yCenter-smallerDimension*1/20;
   eyeDiameter = smallerDimension*1/8;
   xNoseBridge = xCenter;
-  yNoseBridge = yCenter-smallerDimension*1/12;
+  yNoseBridge = yCenter-smallerDimension*1/8;
   xLeftNostril = xCenter-smallerDimension*1/13;
-  yLeftNostril = yCenter+smallerDimension*1/12;
+  yLeftNostril = yCenter+smallerDimension*1/8;
   xRightNostril = xCenter+smallerDimension*1/13;
   yRightNostril = yLeftNostril;
   xLeftMouth = xLeftEye;
@@ -51,13 +51,22 @@ void setup()
 //
 void draw() 
 {
- 
+
   ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter);
   ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter);
   triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNostril, xRightNostril, yRightNostril);
   strokeWeight(thack);
   line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);
   strokeWeight(1); //resets default
+  //
+  xLeftPupil = xCenter-smallerDimension*1/4;
+  yLeftPupil = yCenter-smallerDimension*1/20;
+  xRightPupil = xCenter+smallerDimension*1/4;
+  yRightPupil = yCenter-smallerDimension*1/20;
+  fill(black);
+  pupilDiameter = smallerDimension*1/16;
+  ellipse(xLeftPupil, yLeftPupil, pupilDiameter, pupilDiameter);
+  ellipse(xRightPupil, yRightPupil, pupilDiameter, pupilDiameter);
   //
   xMeasle = random(xCenter-faceRadius, xCenter+faceRadius);
   yMeasle = random(0, smallerDimension); //if zero is first, then default 
@@ -74,6 +83,8 @@ void keyPressed() {
 }//End keyPressed
 //
 void mousePressed() {
+  
+  
 }//End mousePressed
 //
 //End MAIN Program
