@@ -51,14 +51,6 @@ void setup()
 //
 void draw() 
 {
-
-  ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter);
-  ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter);
-  triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNostril, xRightNostril, yRightNostril);
-  strokeWeight(thack);
-  line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);
-  strokeWeight(1); //resets default
-  //
   xLeftPupil = xCenter-smallerDimension*1/4;
   yLeftPupil = yCenter-smallerDimension*1/20;
   xRightPupil = xCenter+smallerDimension*1/4;
@@ -67,6 +59,13 @@ void draw()
   pupilDiameter = smallerDimension*1/16;
   ellipse(xLeftPupil, yLeftPupil, pupilDiameter, pupilDiameter);
   ellipse(xRightPupil, yRightPupil, pupilDiameter, pupilDiameter);
+  //
+  ellipse(xLeftEye, yLeftEye, eyeDiameter, eyeDiameter);
+  ellipse(xRightEye, yRightEye, eyeDiameter, eyeDiameter);
+  triangle(xNoseBridge, yNoseBridge, xLeftNostril, yLeftNostril, xRightNostril, yRightNostril);
+  strokeWeight(thack);
+  line(xLeftMouth, yLeftMouth, xRightMouth, yRightMouth);
+  strokeWeight(1); //resets default
   //
   xMeasle = random(xCenter-faceRadius, xCenter+faceRadius);
   yMeasle = random(0, smallerDimension); //if zero is first, then default 
@@ -83,7 +82,9 @@ void keyPressed() {
 }//End keyPressed
 //
 void mousePressed() {
-  
+  if () {
+  } else{
+  } //End nightMode switch
   
 }//End mousePressed
 //
