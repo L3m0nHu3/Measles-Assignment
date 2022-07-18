@@ -76,7 +76,7 @@ void draw()
   strokeWeight(1); //resets default
   //
   xMeasle = random(xCenter-faceRadius, xCenter+faceRadius);
-  yMeasle = random(0, smallerDimension); //if zero is first, then default 
+  yMeasle = random(smallerDimension); //if zero is first, then default 
   fill(red);
   noStroke ();
   MeasleDiameter = random(smallerDimension*1/75, smallerDimension*1/25);//smallerDimension*1/50;
